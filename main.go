@@ -12,15 +12,15 @@ import (
 func main() {
 	app := cli.NewApp()
 
-	app.Name = "sampleApp"
-	app.Usage = "This app echo input arguments"
+	app.Name = "eputlish"
+	app.Usage = "This app conbine sequenced images to epub."
 	app.Version = "0.0.1"
 
 	app.Action = func(context *cli.Context) error {
 		if context.Bool("cat") {
 			fmt.Println(context.Args().Get(0) + "だにゃん♡")
 		} else {
-			fmt.Println(context.Args().Get(0))
+			epub.Eputlish()
 		}
 		return nil
 	}
@@ -33,6 +33,4 @@ func main() {
 	}
 
 	app.Run(os.Args)
-
-	epub.Hello()
 }
